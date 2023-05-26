@@ -25,7 +25,7 @@ func (p *Photo) BeforeCreate(tx *gorm.DB) (err error) {
 	return err
 }
 
-func (p *Photo) GBeforeUpdate(tx *gorm.DB) (err error) {
+func (p *Photo) BeforeUpdate(tx *gorm.DB) (err error) {
 	_, errUpdate := govalidator.ValidateStruct(p)
 	if errUpdate != nil {
 		err = errUpdate
